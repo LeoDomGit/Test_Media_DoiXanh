@@ -77,15 +77,16 @@ function Home() {
             width: 150,
             renderCell: (params) => {
                 return (
-                    <select
+                   <select
                         className='form-control groupselect'
+                        defaultValue={Number(params.row.group_id)}
                         onChange={(e) => updateGroupId(params.row.id, e.target.value)}
                     >
                         {groups.map((option) => (
                             <option
                                 key={option.id}
                                 value={option.id}
-                                selected={option.id === params.row.group_id ? true : false} // Set selected attribute based on the condition
+
                             >
                                 {option.title}
                             </option>
